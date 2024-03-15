@@ -15,7 +15,9 @@ services:
     environment:
       - NODE_TYPE=${NODE_TYPE:-vanilla}
     env_file:
-      - ${NETWORK_ENV:?.env.mainnet}  # Requires NETWORK_ENV to be set, defaults to mainnet
+      # select your network here:
+#      - .env.sepolia
+      - .env.mainnet
   node:
     build:
       context: .
@@ -30,4 +32,6 @@ services:
       - "6060:6060"     # pprof
     command: [ "bash", "./op-node-entrypoint" ]
     env_file:
-      - ${NETWORK_ENV:?.env.mainnet}  # Requires NETWORK_ENV to be set, defaults to mainnet
+      # select your network here:
+#      - .env.sepolia
+      - .env.mainnet
