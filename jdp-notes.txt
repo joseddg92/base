@@ -1,0 +1,4 @@
+Candidates for OP_NODE_L1_BEACON:
+https://github.com/eth-clients/checkpoint-sync-endpoints
+
+
