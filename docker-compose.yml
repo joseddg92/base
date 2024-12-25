@@ -4,16 +4,17 @@ services:
       context: .
       dockerfile: ${CLIENT}/Dockerfile
     ports:
-      - "8545:8545"       # RPC
-      - "8546:8546"       # websocket
-      - "7301:6060"       # metrics
+      - "18545:8545"       # RPC
+      - "18546:8546"       # websocket
+      - "17301:6060"       # metrics
     command: [ "bash", "./execution-entrypoint" ]
     volumes:
-        - ${HOST_DATA_DIR}:/data
+        - ${HOST_DATA_DIR}/stack2:/data
     env_file:
-      # select your network here:
-#      - .env.sepolia
       - .env.mainnet
+    container_name: execution_stack2
+    hostname: execution
+
   node:
     build:
       context: .
@@ -21,13 +22,17 @@ services:
     depends_on:
       - execution
     ports:
-      - "7545:8545"     # RPC
-      - "9222:9222"     # P2P TCP
-      - "9222:9222/udp" # P2P UDP
-      - "7300:7300"     # metrics
-      - "6060:6060"     # pprof
+      - "17545:8545"     # RPC
+      - "19222:9222"     # P2P TCP
+      - "19222:9222/udp" # P2P UDP
+      - "17300:7300"     # metrics
+      - "16060:6060"     # pprof
     command: [ "bash", "./op-node-entrypoint" ]
     env_file:
-      # select your network here:
-#      - .env.sepolia
       - .env.mainnet
+    container_name: node_stack2
+    hostname: node
+
+networks:
+  default:
+    name: stack2_network
