@@ -50,6 +50,14 @@ file_size = 524288000
 [prune]
 block_interval = 5
 
+[prune.segments]
+sender_recovery = { distance = 120960 }
+transaction_lookup = "full"
+receipts = { distance = 120960 }
+account_history = { distance = 120960 }
+storage_history = { distance = 120960 }
+
+
 [prune.segments.receipts_log_filter]
 
 [peers]
@@ -62,7 +70,7 @@ incoming_ip_throttle_duration = "30s"
 
 [peers.connection_info]
 max_outbound = 100
-max_inbound = 30
+max_inbound = 100
 max_concurrent_outbound_dials = 15
 
 [peers.reputation_weights]
