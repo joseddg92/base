@@ -65,8 +65,8 @@ exec ./geth \
     --metrics.port="$METRICS_PORT" \
     --syncmode="$OP_GETH_SYNCMODE" \
     --gcmode="$OP_GETH_GCMODE" \
-    --maxpeers=256 \
-    --cache=4096 \
+    --maxpeers=512 \
+    --cache=8192 \
     --rollup.sequencerhttp="$OP_GETH_SEQUENCER_HTTP" \
     --rollup.halt=major \
     --op-network="$OP_NODE_NETWORK" \
