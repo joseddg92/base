@@ -57,7 +57,6 @@ receipts = { distance = 120960 }
 account_history = { distance = 120960 }
 storage_history = { distance = 120960 }
 
-
 [prune.segments.receipts_log_filter]
 
 [peers]
@@ -66,11 +65,11 @@ trusted_nodes = []
 trusted_nodes_only = false
 max_backoff_count = 5
 ban_duration = "12h"
-incoming_ip_throttle_duration = "30s"
+incoming_ip_throttle_duration = "0s"
 
 [peers.connection_info]
 max_outbound = 100
-max_inbound = 100
+max_inbound = 60
 max_concurrent_outbound_dials = 15
 
 [peers.reputation_weights]
