@@ -18,7 +18,7 @@ echo "$OP_NODE_L2_ENGINE_AUTH_RAW" > "$OP_NODE_L2_ENGINE_AUTH"
 mkdir -p /ipc/
 
 exec ./op-reth node \
-  -vvvv \
+  -vvv \
   --full \
   --ipcpath=/ipc/reth.ipc \
   --datadir="$RETH_DATA_DIR" \
