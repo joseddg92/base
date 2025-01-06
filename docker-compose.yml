@@ -12,7 +12,7 @@ services:
     command: [ "bash", "./execution-entrypoint" ]
     volumes:
         - ${HOST_DATA_DIR}:/data
-        - /tmp/reth.ipc:/tmp/reth.ipc  # Map IPC file to host
+        - /root/nodes-ipc:/ipc
     env_file:
       # select your network here:
 #      - .env.sepolia
