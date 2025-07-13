@@ -37,6 +37,7 @@ echo "$OP_NODE_L2_ENGINE_AUTH_RAW" > "$OP_NODE_L2_ENGINE_AUTH"
 
 exec $BINARY node \
   -vvv \
+  --full \
   --datadir="$RETH_DATA_DIR" \
   --log.stdout.format json \
   --ws \
