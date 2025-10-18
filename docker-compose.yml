@@ -14,6 +14,7 @@ services:
     volumes:
       - ${HOST_DATA_DIR}:/data
       - /box:/box
+      - /big-box:/big-box
     environment:
       - USE_BASE_CONSENSUS=${USE_BASE_CONSENSUS:-false}
       - NODE_TYPE=${NODE_TYPE:-vanilla}
