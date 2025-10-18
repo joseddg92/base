@@ -54,6 +54,10 @@ if [ "${HOST_IP:+x}" = x ]; then
     ADDITIONAL_ARGS="$ADDITIONAL_ARGS --nat=extip:$HOST_IP"
 fi 
 
+#echo "Sleeping for maintenance, connect to the docker"
+#sleep 10000000000
+#exit
+
 exec ./geth \
     --datadir="$GETH_DATA_DIR" \
     --verbosity="$VERBOSITY" \

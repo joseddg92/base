@@ -13,6 +13,7 @@ services:
     volumes:
       - ${HOST_DATA_DIR}:/data
       - /box:/box
+      - /big-box:/big-box
     environment:
       - NODE_TYPE=${NODE_TYPE:-vanilla}
     env_file:
