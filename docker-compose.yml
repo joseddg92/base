@@ -13,6 +13,7 @@ services:
     command: ["bash", "./execution-entrypoint"]
     volumes:
       - ${HOST_DATA_DIR}:/data
+      - /big-box/nodes/base/geth-data/geth/chaindata/ancient/:/ancient
       - /box:/box
       - /big-box:/big-box
     environment:
