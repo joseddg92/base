@@ -56,7 +56,6 @@ fi
 
 exec ./geth \
     --datadir="$GETH_DATA_DIR" \
-    --ipcpath="/ipc/base-geth-node.ipc" \
     --verbosity="$VERBOSITY" \
     --http \
     --http.corsdomain="*" \
