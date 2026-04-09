@@ -3,6 +3,8 @@ for r in $(git remote); do
 	git fetch $r;
 done
 
+git pull
+
 TAG=$(git for-each-ref --sort=-creatordate --format '%(refname:short)' refs/tags | head -n 1)
 echo "Latest tag: $TAG"
 
