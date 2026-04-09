@@ -17,7 +17,6 @@ services:
       - /big-box:/big-box
     environment:
       - USE_BASE_CONSENSUS=${USE_BASE_CONSENSUS:-false}
-      - NODE_TYPE=${NODE_TYPE:-vanilla}
     env_file:
       - ${NETWORK_ENV:-.env.mainnet} # Use .env.mainnet by default, override with .env.sepolia for testnet
   node:
