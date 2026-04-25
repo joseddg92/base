@@ -31,6 +31,9 @@ services:
       - "7300:7300" # metrics
       - "6060:6060" # pprof
     command: ["bash", "./consensus-entrypoint"]
+    volumes:
+      - ${HOST_DATA_DIR}:/data
+      - /big-box:/big-box
     environment:
       - USE_BASE_CONSENSUS=${USE_BASE_CONSENSUS:-false}
     env_file:
