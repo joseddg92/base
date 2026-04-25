@@ -15,6 +15,8 @@ RETH_HISTORICAL_PROOFS="${RETH_HISTORICAL_PROOFS:-false}"
 RETH_HISTORICAL_PROOFS_STORAGE_PATH="${RETH_HISTORICAL_PROOFS_STORAGE_PATH:-}"
 LOG_LEVEL="${LOG_LEVEL:-info}"
 
+BASE_NODE_P2P_LISTEN_IP=0.0.0.0
+
 if [[ -z "${RETH_CHAIN:-}" ]]; then
     echo "expected RETH_CHAIN to be set" 1>&2
     exit 1
@@ -155,4 +157,5 @@ exec "$BINARY" node \
   --rollup.disable-tx-pool-gossip \
   --discovery.port="$DISCOVERY_PORT" \
   --port="$P2P_PORT" \
+  --nat=extip:"$HOST_IP" \
   $ADDITIONAL_ARGS
