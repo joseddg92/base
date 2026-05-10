@@ -48,5 +48,6 @@ if [[ -n "${BASE_NODE_SOURCE_L2_RPC:-}" ]]; then
   echo "Running base-consensus in follow mode because BASE_NODE_SOURCE_L2_RPC is set"
   exec ./base-consensus follow
 else
+  echo "Running base-consensus in node mode because BASE_NODE_SOURCE_L2_RPC is NOT set"
   exec ./base-consensus node
 fi
