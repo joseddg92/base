@@ -144,7 +144,7 @@ exec "$BINARY" node \
   --http.corsdomain="*" \
   --http.addr=0.0.0.0 \
   --http.port="$RPC_PORT" \
-  --http.api=web3,debug,eth,net,txpool,miner \
+  --http.api=web3,debug,eth,net,txpool,miner,admin \
   --ipcpath="$IPC_PATH" \
   --authrpc.addr=0.0.0.0 \
   --authrpc.port="$AUTHRPC_PORT" \
