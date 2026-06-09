@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-NETWORK="${NETWORK:-mainnet}"
-
-(
-  sleep 30
-  NETWORK="$NETWORK" ./add-peer.sh
-) &
+( sleep 30; NETWORK="mainnet" ./add-peer.sh;) &
 ADD_PEER_PID=$!
 
 cleanup() {
@@ -17,4 +12,4 @@ cleanup() {
 
 trap cleanup EXIT
 
-docker compose up --build
+docker-compose up --build
